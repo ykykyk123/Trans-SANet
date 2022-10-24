@@ -286,7 +286,7 @@ class Conv2dReLU(nn.Sequential):
 
 
 
-##￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥ SE空间注意力￥￥￥￥￥￥￥￥￥￥￥￥
+##￥￥￥￥￥￥ SE￥￥￥￥￥￥￥￥￥￥￥￥
 
 class SELayer(nn.Module):
     def __init__(self, channel, reduction=16):
@@ -305,10 +305,10 @@ class SELayer(nn.Module):
         y = self.fc(y).view(b, c, 1, 1)
         return x * y.expand_as(x)
 
-##￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥ SE空间注意力￥￥￥￥￥￥￥￥￥￥￥￥
+##￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥￥ SE￥￥￥￥￥￥￥￥￥￥￥￥
 
 
-##############*******************************CBAM注意力机制************#####
+##############**************CBAM***********#####
 class ChannelAttention(nn.Module):
     def __init__(self, in_planes, ratio=16):
         super(ChannelAttention, self).__init__()
